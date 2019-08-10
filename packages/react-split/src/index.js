@@ -65,7 +65,7 @@ class SplitWrapper extends React.Component {
         // Destroy and re-create split if options changed
         if (needsRecreate) {
             options.minSize = minSize
-            options.sizes = this.split.getSizes()
+            options.sizes = sizes || this.split.getSizes()
             this.split.destroy(true, true)
             options.gutter = (index, direction, pairB) => pairB.previousSibling
             this.split = Split(
@@ -75,7 +75,7 @@ class SplitWrapper extends React.Component {
                 ),
                 options,
             )
-        } else {
+        } else if (sizes) {
             // If only the size has changed, set the size. No need to do this if re-created.
             let sizeChanged = false
 
@@ -157,7 +157,7 @@ SplitWrapper.propTypes = {
     onDrag: PropTypes.func,
     onDragStart: PropTypes.func,
     onDragEnd: PropTypes.func,
-    collapsed: PropTypes.bool,
+    collapsed: PropTypes.number,
     children: PropTypes.arrayOf(PropTypes.element),
 }
 

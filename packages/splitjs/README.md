@@ -1,8 +1,8 @@
 <p align="center">
-<img alt="Split.js" title="Split.js" src="logo.svg" width="430">
+<img alt="Split.js" title="Split.js" src="https://rawcdn.githack.com/nathancahill/split/df1873f0c74d2da60f42e1774040651d6191b9bb/packages/splitjs/logo.svg?sanitize=true" width="430">
 <br><br>
 <a href="https://circleci.com/gh/nathancahill/split"><img src="https://img.shields.io/circleci/project/github/nathancahill/split/master.svg" alt="Build Status"></a>
-<img src="https://img.badgesize.io/https://unpkg.com/split.js/dist/split.min.js?compression=gzip&label=size&v=1.5.9" alt="File Size">
+<img src="https://img.badgesize.io/https://unpkg.com/split.js/dist/split.min.js?compression=gzip&label=size&v=1.5.11" alt="File Size">
 <img src="https://badge.fury.io/js/split.js.svg" alt="npm version">
 <img src="https://david-dm.org/nathancahill/split/status.svg" alt="Dependencies">
 <img src = "https://opencollective.com/splitjs/backers/badge.svg" alt="Backers on Open Collective"/>
@@ -27,7 +27,7 @@
 -   [Options](#options)
 -   [Examples](#usage-examples)
 -   [Saving State](#saving-state)
--   [Flexbox](#flexbox)
+-   [Flexbox](#flex-layout)
 -   [API](#api)
 -   [CSS](#css)
 -   [React](#react)
@@ -68,7 +68,7 @@ The [UMD](https://github.com/umdjs/umd) build is also available on [unpkg](http:
 or [cdnjs](https://cdnjs.com/):
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.5.9/split.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.5.11/split.min.js"></script>
 ```
 
 You can find the library on `window.Split`.
@@ -146,7 +146,7 @@ the first element will always load at at least `300px`, even if `25%` were small
 Split(['#one', '#two'], {
     sizes: [25, 75],
     minSize: [300, 100],
-    expanedToMin: true,
+    expandToMin: true,
 })
 ```
 
@@ -222,13 +222,13 @@ Split(['#one', '#two'], {
 Optional function called to create each gutter element. The signature looks like this:
 
 ```js
-;(index, direction, pairElement) => HTMLElement
+(index, direction, pairElement) => HTMLElement
 ```
 
 Defaults to creating a `div` with `class="gutter gutter-horizontal"` or `class="gutter gutter-vertical"`, depending on the direction. The default gutter function looks like this:
 
 ```js
-;(index, direction) => {
+(index, direction) => {
     const gutter = document.createElement('div')
     gutter.className = `gutter gutter-${direction}`
     return gutter
@@ -243,7 +243,7 @@ An additional argument, `pairElement`, is passed to the gutter function: this is
 This final argument makes it easy to return the gutter that has already been created, for example, if `split.destroy()` was called with the option to preserve the gutters.
 
 ```js
-;(index, direction, pairElement) => pairElement.previousSibling
+(index, direction, pairElement) => pairElement.previousSibling
 ```
 
 #### elementStyle
@@ -251,7 +251,7 @@ This final argument makes it easy to return the gutter that has already been cre
 Optional function called setting the CSS style of the elements. The signature looks like this:
 
 ```js
-;(dimension, elementSize, gutterSize, index) => Object
+(dimension, elementSize, gutterSize, index) => Object
 ```
 
 Dimension will be a string, `'width'` or `'height'`, and can be used in the return style. `elementSize` is the target percentage value of the element, and `gutterSize` is the target pixel value of the gutter.
@@ -286,7 +286,7 @@ Flex styles for a horizontal split could return an object like this:
 Optional function called when setting the CSS style of the gutters. The signature looks like this:
 
 ```js
-;(dimension, gutterSize, index) => Object
+(dimension, gutterSize, index) => Object
 ```
 
 Dimension is a string, either `'width'` or `'height'`, and `gutterSize` is a pixel value representing the width of the gutter.
@@ -523,6 +523,10 @@ Overflow can be handled as well, to get scrolling within the elements:
 }
 ```
 
+## React
+
+**[React Split](https://github.com/nathancahill/split/tree/master/packages/react-split)** - Thin wrapper component for Split.js.
+
 ## Browser Support
 
 This library uses [CSS calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc#AutoCompatibilityTable), [CSS box-sizing](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing#AutoCompatibilityTable) and [JS getBoundingClientRect()](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect#AutoCompatibilityTable). These features are supported in the following browsers:
@@ -573,7 +577,7 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 ## License
 
-Copyright (c) 2018 Nathan Cahill
+Copyright (c) 2019 Nathan Cahill
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
