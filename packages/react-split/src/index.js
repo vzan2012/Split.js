@@ -33,6 +33,7 @@ class SplitWrapper extends React.Component {
         } = prevProps
 
         const otherProps = [
+            'maxSize',
             'expandToMin',
             'gutterSize',
             'gutterAlign',
@@ -107,6 +108,7 @@ class SplitWrapper extends React.Component {
         const {
             sizes,
             minSize,
+            maxSize,
             expandToMin,
             gutterSize,
             gutterAlign,
@@ -144,6 +146,10 @@ SplitWrapper.propTypes = {
         PropTypes.number,
         PropTypes.arrayOf(PropTypes.number),
     ]),
+    maxSize: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.arrayOf(PropTypes.number),
+    ]),
     expandToMin: PropTypes.bool,
     gutterSize: PropTypes.number,
     gutterAlign: PropTypes.string,
@@ -164,6 +170,7 @@ SplitWrapper.propTypes = {
 SplitWrapper.defaultProps = {
     sizes: undefined,
     minSize: undefined,
+    maxSize: undefined,
     expandToMin: undefined,
     gutterSize: undefined,
     gutterAlign: undefined,

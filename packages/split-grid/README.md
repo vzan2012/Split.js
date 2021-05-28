@@ -1,5 +1,5 @@
 
-# Split Grid [![CI](https://img.shields.io/circleci/project/github/nathancahill/split/master.svg)](https://circleci.com/gh/nathancahill/split) ![Dependencies](https://david-dm.org/nathancahill/split/status.svg) [![File size](https://img.badgesize.io/https://unpkg.com/split-grid/dist/split-grid.min.js?compression=gzip&label=size&v=1.0.7)](https://unpkg.com/split-grid/dist/split-grid.min.js)
+# Split Grid [![CI](https://img.shields.io/circleci/project/github/nathancahill/split/master.svg)](https://circleci.com/gh/nathancahill/split) ![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen) [![File size](https://img.badgesize.io/https://unpkg.com/split-grid/dist/split-grid.min.js?compression=gzip&label=size&v=1.0.7)](https://unpkg.com/split-grid/dist/split-grid.min.js)
 
 The spiritual successor of [Split.js](https://github.com/nathancahill/split/tree/master/packages/splitjs), built for CSS Grid.
 
@@ -110,6 +110,10 @@ is positioned on. These must match.
 
 The minimum size in pixels for all tracks. Default: `0`
 
+##### `maxSize: number`
+
+The maximum size in pixels for all tracks. Default: `Infinity`
+
 ##### `columnMinSize: number`
 
 The minimum size in pixels for all tracks. Default: `options.minSize`
@@ -118,10 +122,18 @@ The minimum size in pixels for all tracks. Default: `options.minSize`
 
 The minimum size in pixels for all tracks. Default: `options.minSize`
 
+##### `columnMaxSize: number`
+
+The maximum size in pixels for all tracks. Default: `options.maxSize`
+
+##### `rowMaxSize: number`
+
+The maximum size in pixels for all tracks. Default: `options.maxSize`
+
 ##### `columnMinSizes: { [track: number]: number }`
 
 An object keyed by `track` index, with values set to the minimum size in pixels for the
-track at that index. Allows individual minSizes to be specified by track. 
+track at that index. Allows individual minSizes to be specified by track.
 Note this option is plural with an `s`, while the two fallback options are singular.
 Default: `options.columnMinSize`
 
@@ -131,6 +143,20 @@ An object keyed by `track` index, with values set to the minimum size in pixels 
 track at that index. Allows individual minSizes to be specified by track.
 Note this option is plural with an `s`, while the two fallback options are singular.
 Default: `options.rowMinSize`
+
+##### `columnMaxSizes: { [track: number]: number }`
+
+An object keyed by `track` index, with values set to the maximum size in pixels for the
+track at that index. Allows individual maxSizes to be specified by track.
+Note this option is plural with an `s`, while the two fallback options are singular.
+Default: `options.columnMaxSize`
+
+##### `rowMaxSizes: { [track: number]: number }`
+
+An object keyed by `track` index, with values set to the maximum size in pixels for the
+track at that index. Allows individual maxSizes to be specified by track.
+Note this option is plural with an `s`, while the two fallback options are singular.
+Default: `options.rowMaxSize`
 
 ##### `snapOffset: number`
 

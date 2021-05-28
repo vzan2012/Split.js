@@ -1,4 +1,4 @@
-# React Split Grid &nbsp; [![CI](https://img.shields.io/circleci/project/github/nathancahill/split/master.svg)](https://circleci.com/gh/nathancahill/split) ![Dependencies](https://david-dm.org/nathancahill/split/status.svg) ![](https://img.badgesize.io/https://unpkg.com/react-split-grid/dist/react-split-grid.min.js?compression=gzip&label=size)
+# React Split Grid &nbsp; [![CI](https://img.shields.io/circleci/project/github/nathancahill/split/master.svg)](https://circleci.com/gh/nathancahill/split) ![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen) ![](https://img.badgesize.io/https://unpkg.com/react-split-grid/dist/react-split-grid.min.js?compression=gzip&label=size)
 
 React component for [Split Grid](https://github.com/nathancahill/split/tree/master/packages/split-grid)
 
@@ -80,10 +80,15 @@ Refer to [Split Grid documentation](https://github.com/nathancahill/split/tree/m
 Here's the full list:
 
 -   `minSize: number`
+-   `maxSize: number`
 -   `columnMinSize: number`
 -   `rowMinSize: number`
+-   `columnMaxSize: number`
+-   `rowMaxSize: number`
 -   `columnMinSizes: { [track: number]: number }`
 -   `rowMinSizes: { [track: number]: number }`
+-   `columnMaxSizes: { [track: number]: number }`
+-   `rowMaxSizes: { [track: number]: number }`
 -   `snapOffset: number`
 -   `columnSnapOffset: number`
 -   `rowSnapOffset: number`
